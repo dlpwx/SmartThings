@@ -96,7 +96,6 @@ def parse(String description) {
 
         	// log.debug description[-2..-1]
         	def i = Math.round(convertHexToInt(description[-2..-1]) / 256 * 100 )
-			sendEvent( name: "level", value: i )
         	sendEvent( name: "switch.setLevel", value: i) //added to help subscribers
 
     	} 
@@ -115,7 +114,6 @@ def poll() {
 }
 
 def on() {
-	state.lvl = "00"
     state.trigger = "on/off"
 
     // log.debug "on()"
@@ -124,7 +122,6 @@ def on() {
 }
 
 def off() {
-	state.lvl = "00"
     state.trigger = "on/off"
 
     // log.debug "off()"
@@ -154,16 +151,6 @@ def setLevel(value) {
 		sendEvent(name: "switch", value: "on")
 	}
 
-    sendEvent(name: "level", value: value)
-    value = (value * 255 / 100)
-    def level = hex(value);
-
-    state.trigger = "setLevel"
-    state.lvl = "${level}"
-
-    if (dimRate) {
-    	cmds << "st cmd 0x${device.deviceNetworkId} 1 8 4 {${level} ${state.rate}}"
-    }
     else {   
     	cmds << "st cmd 0x${device.deviceNetworkId} 1 8 4 {${level} 1500}"
     }
