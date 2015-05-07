@@ -1,5 +1,3 @@
-/**
- 
 metadata {
 	definition (name: "Orbit2", namespace: "test", author: "smartthings") {
 
