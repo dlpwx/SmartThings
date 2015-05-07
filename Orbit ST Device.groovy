@@ -1,40 +1,5 @@
 /**
- *  GE Link Bulb
- *
- *  Copyright 2014 SmartThings
- *
- *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- *  in compliance with the License. You may obtain a copy of the License at:
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
- *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
- *  for the specific language governing permissions and limitations under the License.
- *
- *  Thanks to Chad Monroe @cmonroe and Patrick Stuart @pstuart, and others
- *
- ******************************************************************************
- *                                Changes
- ******************************************************************************
- *
- *  Change 1:	2014-10-10 (wackford)
- *				Added setLevel event so subscriptions to the event will work
- *  Change 2:	2014-12-10 (jscgs350 using Sticks18's code and effort!)
- *				Modified parse section to properly identify bulb status in the app when manually turned on by a physical switch
- *  Change 3:	2014-12-12 (jscgs350, Sticks18's)
- *				Modified to ensure dimming was smoother, and added fix for dimming below 7
- *	Change 4:	2014-12-14 Part 1 (Sticks18)
- *				Modified to ignore unnecessary level change responses to prevent level skips
- *	Change 5:	2014-12-14 Part 2 (Sticks18, jscgs350)
- *				Modified to clean up trace&debug logging, added new code from @sticks18 for parsing "on/off" to determine if the bulb is manually turned on and immediately update the app
- *	Change 6:	2015-01-02	(Sticks18)
- *				Modified to allow dim rate in Preferences. Added ability to dim during On/Off commands and included this option in Preferences. Defaults are "Normal" and no dim for On/Off.
- *	Change 7:	2015-01-09	(tslagle13)
- *				dimOnOff is was boolean, and switched to enum. Properly update "rampOn" and "rampOff" when refreshed or a polled (dim transition for On/Off commands)
- *
- *
- */
+ 
 metadata {
 	definition (name: "Orbit2", namespace: "test", author: "smartthings") {
 
